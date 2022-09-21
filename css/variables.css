@@ -1,0 +1,24 @@
+:root{
+    /* ## Colors */
+    --orange: hsl(26, 100%, 55%);
+    --light-orange: hsl(26deg 100% 55% / 75%);
+    --pale-orange: hsl(25, 100%, 94%);
+    --very-dark-blue: hsl(220, 13%, 13%);
+    --dark-grayish-blue: hsl(219, 9%, 45%);
+    --grayish-blue: hsl(220, 14%, 75%);
+    --light-grayish-blue: hsl(223, 64%, 98%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+
+    /* Exmaple for BEM */
+    --green: rgb(55, 207, 55);
+
+    /* ## Typography */
+    --font-size-p: 16px;
+    --family: "Kumbh Sans";
+    --light-weight: 400;
+    --bold-weight: 700;
+    
+    --mobile: 375px;
+    --desktop: 1440px;
+}

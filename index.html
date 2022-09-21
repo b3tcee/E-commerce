@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="node_modules/owl.carousel/dist/assets/owl.carousel.min.css" />
+  <!-- If you want to use the default navigation styles, you will also need to include owl.theme.default.css -->
+  <!-- <link rel="stylesheet" href="node_modules/owl.carousel/dist/assets/owl.theme.default.css" /> -->
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="css/responsive.css" rel="stylesheet" type="text/css">
+  
+  <title>E-commerce product page</title>
+
+</head>
+<body>
+  <div class="body-wrapper">
+    <header>
+      <div class="menu--mobile">
+        <img src="images/icon-menu.svg" class="menu__img--mobile">
+      </div>
+      <div class="logo">
+        <img src="images/logo.svg">
+      </div>
+      <nav class="menu">
+        <ul class="menu__list">
+          <li class="list__item">Collections</li>
+          <li class="list__item">Men</li>
+          <li class="list__item">Women</li>
+          <li class="list__item">About</li>
+          <li class="list__item">Contact</li>
+        </ul>
+      </nav>
+      <div class="profile"> <!-- former .login-area-->
+        <span class="profile__shop"> <!-- former .login-area span -->
+          <!-- <img src="images/icon-cart.svg" class="profile__shop--icon"> -->
+          <svg class="profile__shop--icon" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill-rule="nonzero"/></svg>
+          <span class="shop__count"></span>
+        </span>
+        <img src="images/image-avatar.png" class="profile--avatar">
+      </div>
+    </header>
+
+    <!-- PRODUCT PREVIEW SECTION START -->
+    <section class="product"> <!-- former .preview-sec-->
+      <div class="product__preview">
+        <div class="owl-carousel carousel--desktop"> 
+          <img src="images/image-product-1.jpg" class="preview__img img--large" data-dot="<img src='images/image-product-1-thumbnail.jpg' class='thumbnails--small owl-dot'>"> <!-- former .large-img -->
+          <img src="images/image-product-2.jpg" class="preview__img img--large" data-dot="<img src='images/image-product-2-thumbnail.jpg' class='thumbnails--small owl-dot'>">
+          <img src="images/image-product-3.jpg" class="preview__img img--large" data-dot="<img src='images/image-product-3-thumbnail.jpg' class='thumbnails--small owl-dot'>">
+          <img src="images/image-product-4.jpg" class="preview__img img--large" data-dot="<img src='images/image-product-4-thumbnail.jpg' class='thumbnails--small owl-dot'>">
+        </div>
+
+        <!-- <div class="owl-carousel carousel--mobile"> 
+          <img src="images/image-product-1.jpg" class="preview__img img--large">
+          <img src="images/image-product-2.jpg" class="preview__img img--large">
+          <img src="images/image-product-3.jpg" class="preview__img img--large">
+          <img src="images/image-product-4.jpg" class="preview__img img--large">
+        </div> -->
+
+      </div>
+      <div class="product__detail"> <!-- former .product-desc-->
+        <div class="detail__content"> <!-- former .desc-content -->
+          <h3 class="content__tag content__tag--orange">Sneaker Company</h3>
+          <h1 class="content__title">Fall Limited Edition Sneakers</h1>
+          <p class="content__description">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+            durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+        </div>
+        <div class="detail__price"> <!-- former .desc-pricing -->
+          <div>
+            <h2 class="price__new">$125.00</h2>
+            <span class="price__discount price__discount--orange">50%</span>
+          </div>
+          <div>
+            <del class="price__old">$250.00</del>
+          </div>
+        </div>
+        <form class="product__shop" name="cart"> <!-- former .desc-form -->
+          <div class="shop__quantity"> <!-- former .item-number -->
+            <span class="quantity__minus" onclick="subtract()"> <!-- former .minus-button -->
+              <img src="images/icon-minus.svg" class="quantity--icon"> <!-- former .button-icon -->
+            </span>
+
+            <input class="quantity__number" name="qty" type="number" value="0" min="0" max="5" placeholder="0" required> 
+
+            <span class="quantity__plus" onclick="add()">
+              <img src="images/icon-plus.svg" class="quantity--icon">
+            </span>
+          </div>
+          <button type="submit" class="btn btn--submit btn--orange" onclick="addToCart()">
+            <span><img src="images/icon-cart-white.svg" class="submit__icon"></span>
+            Add to cart
+          </button>
+        </form>
+      </div>
+    </section> 
+    <!-- PRODUCT PREVIEW SECTION END -->
+    
+    <footer>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a>Betsy Otoyo</a>.
+      </div>
+    </footer>
+  </div>
+
+  <!-- EMPTY CART SECTION START -->
+  <section class="cart__container">
+    <div class="cart__heading"> 
+      <h1 class="cart__text">Cart</h1>
+      <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg" class="cart__close-button">
+        <path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill-rule="evenodd"/>
+      </svg>
+    </div>
+    <div class="cart__status">
+      <p> Your cart is empty </p>
+    </div>
+  </section>
+  <!-- EMPTY CART SECTION END -->
+
+  <!-- FILLED CART SECTION START -->
+  <section class="cart__container--filled">
+    <div class="cart__heading"> 
+      <h1 class="cart__text">Cart</h1>
+      <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg" class="cart__close-button--filled">
+        <path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill-rule="evenodd"/>
+      </svg>
+    </div>
+    <div class="cart__status--filled">
+      <div class="cart__content">
+        <div>
+          <img src="images/image-product-1-thumbnail.jpg" class="cart__content__image">
+          <span class="cart__content__desc">
+            <p class="desc__name">Fall Limited Edition Sneakers</p>
+            <p style="margin: 0" class="desc__price"></p>
+          </span>
+        </div>
+        <span>
+          <img class="cart--del" src="images/icon-delete.svg" >
+        </span>
+      </div>
+      <button class="cart__content--checkoutbtn">Checkout</button>
+    </div>
+  </section>
+  <!-- FILLED CART SECTION END -->
+
+  <!-- MODAL SECTION START -->
+  <section class="modal">
+    <!-- Owl Carousel -->
+    <div class="modal__preview"> 
+      <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg" class="modal__close-button">
+        <path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill-rule="evenodd"/>
+      </svg>
+      <!-- <div class="owl-carousel--modal">
+        <img src="images/image-product-1.jpg" class="preview__img img--large" data-dot="<img src='images/image-product-1-thumbnail.jpg' class='thumbnails--small owl-dot thumbnails--modal'>">
+        <img src="images/image-product-2.jpg" class="preview__img img--large" data-dot="<img src='images/image-product-2-thumbnail.jpg' class='thumbnails--small owl-dot thumbnails--modal'>">
+        <img src="images/image-product-3.jpg" class="preview__img img--large" data-dot="<img src='images/image-product-3-thumbnail.jpg' class='thumbnails--small owl-dot thumbnails--modal'>">
+        <img src="images/image-product-4.jpg" class="preview__img img--large" data-dot="<img src='images/image-product-4-thumbnail.jpg' class='thumbnails--small owl-dot thumbnails--modal'>">
+     </div> -->
+     <div class="owl-carousel"> 
+      <img src="images/image-product-1.jpg" class="preview__img img--large" data-dot="<img src='images/image-product-1-thumbnail.jpg' class='thumbnails--small owl-dot'>"> 
+      <img src="images/image-product-2.jpg" class="preview__img img--large" data-dot="<img src='images/image-product-2-thumbnail.jpg' class='thumbnails--small owl-dot'>">
+      <img src="images/image-product-3.jpg" class="preview__img img--large" data-dot="<img src='images/image-product-3-thumbnail.jpg' class='thumbnails--small owl-dot'>">
+      <img src="images/image-product-4.jpg" class="preview__img img--large" data-dot="<img src='images/image-product-4-thumbnail.jpg' class='thumbnails--small owl-dot'>">
+    </div>
+    </div>
+  </section>
+  <!-- MODAL SECTION END -->
+  
+  <script src="node_modules/jquery/dist/jquery.js"></script>
+  <script src="node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+  <script>
+    // alert("This is a themed e-commerce project! ")
+    $(document).ready(function(){
+      $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: false,
+        autoplay: true,
+        autoplayTimeout: 2700,
+
+        responsiveClass: true,
+        responsive: {
+          0: {
+            items:1,
+            nav: true,
+            dots: false,
+            dotsData: false,
+            dotsEach: false,
+          },
+          480:{
+            items:1,
+            nav: true,
+            dots: false,
+            dotsData: false,
+            dotsEach: false,
+            navText: [
+              "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512' width='15' height='21' aria-label='Previous' class='owl-nav--icon'><path d='M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z'/></svg>", 
+              "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512' width='15' height='21' aria-label='Next' class='owl-nav--icon'><path d='M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z'/></svg>"
+            ]
+          },
+          768:{
+            items:1,
+            nav: true,
+            dots: true,
+            dotsData: true,
+            dotsEach: true,
+            navText: [
+              "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512' width='15' height='21' aria-label='Previous' class='owl-nav--icon'><path d='M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z'/></svg>", 
+              "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512' width='15' height='21' aria-label='Next' class='owl-nav--icon'><path d='M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z'/></svg>"
+            ]
+          },
+          1024:{
+            items:1,
+            nav: false,
+            dots: true,
+            dotsData: true,
+            dotsEach: true,
+            navText: [
+              "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512' width='15' height='21' aria-label='Previous' class='owl-nav--icon'><path d='M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z'/></svg>", 
+              "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512' width='15' height='21' aria-label='Next' class='owl-nav--icon'><path d='M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z'/></svg>"
+            ]
+          }
+        }
+      });
+      $(".owl-carousel--modal").owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: false,
+        autoplay: true,
+        autoplayTimeout: 2700,
+        dots: true,
+        dotsData: true,
+        dotsEach: true,
+        responsiveClass: true,
+        responsive: {
+          0: {
+            items:1,
+            nav: true,
+          },
+          480:{
+            items:1,
+            nav: true,
+            navText: [
+              "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512'width='15' height='21' aria-label='Previous'><path d='M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z'/></svg>", 
+              "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512' width='15' height='21' aria-label='Next'><path d='M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z'/></svg>"
+            ]
+          },
+          768:{
+            items:1,
+            nav: true,
+            navText: [
+              "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512'width='15' height='21' aria-label='Previous'><path d='M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z'/></svg>", 
+              "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512' width='15' height='21' aria-label='Next'><path d='M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z'/></svg>"
+            ]
+          },
+          1024:{
+            items:1,
+            nav: false,
+            navText: [
+              "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512'width='15' height='21' aria-label='Previous'><path d='M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z'/></svg>", 
+              "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512' width='15' height='21' aria-label='Next'><path d='M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z'/></svg>"
+            ]
+          }
+        }
+      });
+    });
+
+  </script>
+  <script src="js/script.js"></script>
+  
+</body>
+</html>
