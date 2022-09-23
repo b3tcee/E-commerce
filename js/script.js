@@ -17,6 +17,8 @@ let cartIcon = document.querySelector(".profile__shop--icon"),
     cartFilled = document.querySelector(".cart__container--filled"),
     qty_count = document.querySelector(".shop__count");
     cartProductName = document.querySelector(".desc__name");
+    let cartDel = document.querySelector(".cart--del");
+    let cartItem = document.querySelector(".cart__content--items")
 
 let quantity = document.querySelector(".quantity__number").value; //0
 // console.log(quantity);
@@ -109,6 +111,17 @@ if (screen.width == 375 && productName.length >= 20) {
 
 // ============== DELETE CART ITEMS =====================
 // Create a function to delete cart items. (JS)
+cartDel.addEventListener("click", DeleteItem);
+// cartDel.addEventListener("click", showCart);
+
+function DeleteItem () {
+    cartItem.style.display = "none";
+}
+
+while (cartItem.style.display == "none") {
+     cart.style.display = "block";
+}
+
 
 // Also adjust the design for a filled cart in the mobile view (CSS)
 

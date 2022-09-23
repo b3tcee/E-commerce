@@ -156,6 +156,22 @@
         font-size: 20px;
     }
 
+    .cart__content--checkoutbtn {
+        width: 100%;
+        /* padding: 0px; */
+        /* height: 50%; */
+        height: 40%;
+    }
+
+    .cart__container--filled {
+        height: 17em;
+    }
+
+    .cart--del {
+        margin: 0px;
+        bottom: 58%;
+        /* margin-right: 37px; */
+    }
     /* ======= FOOTER ======== */
     footer{
         padding-top: 60px;
